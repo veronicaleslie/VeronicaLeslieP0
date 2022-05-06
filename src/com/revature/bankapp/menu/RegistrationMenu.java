@@ -55,7 +55,7 @@ public class RegisterMenu extends Menu{
         String user_name = "";
         Users newTrainer = new UsersBuilder().setFirst_name(first_name).setLast_name(last_name).setEmail(user_name).setPassword(password).createUsers();
         System.out.println("Here is the trainer that was provided by the user: " + newTrainer);
-        UserServices.registerUser(new User);
+        UserServices.registerUser(new  User);
     }
 }
 

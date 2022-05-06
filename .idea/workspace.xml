@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/Menu.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/RegistrationMenu.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/WelcomeMenu.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/Crudable.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/UserDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/util/AppState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/UsersBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainDriver.java" afterDir="false" />
     </list>
