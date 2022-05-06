@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/util/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/RegistrationMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/WelcomeMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/Crudable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/util/AppState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainDriver.java" afterDir="false" />
     </list>
@@ -15,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -35,6 +40,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Revature/Projects/poke_project-layered_pokedex",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
