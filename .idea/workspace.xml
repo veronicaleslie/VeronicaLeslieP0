@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/RegistrationMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/menu/WelcomeMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/Crudable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/util/AppState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/UsersBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/services/AccountServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/services/Serviceable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/services/UserServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/util/logging/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/menu/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/menu/RegistrationMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/menu/WelcomeMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/Crudable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/userDao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/AccountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/util/AppState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/util/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/UsersBuilder.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +49,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/Revature/Projects/poke_project-layered_pokedex",
+    "last_opened_file_path": "C:/Revature/Projects/poke_project-layered_pokedex/poke_project-pokedex_maven",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.revature.bankapp.service" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MainDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainDriver" />
