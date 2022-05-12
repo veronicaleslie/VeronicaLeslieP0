@@ -1,4 +1,4 @@
-package main.java.com.revature.bankapp.daos.models;
+package com.revature.bankapp.models;
 
 
 public class Users {

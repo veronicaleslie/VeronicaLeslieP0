@@ -1,6 +1,6 @@
-package main.java.bankapp.services;
+package com.revature.bankapp.services;
 
-import main.java.com.revature.bankapp.daos.models.Users;
+import com.revature.bankapp.models.Users;
 
 
 public interface Serviceable<U> {

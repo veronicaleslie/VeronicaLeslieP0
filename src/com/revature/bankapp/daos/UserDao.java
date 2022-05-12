@@ -1,12 +1,12 @@
-package main.java.com.revature.bankapp.daos.daos;
+package com.revature.bankapp.daos;
 
-import main.java.com.revature.bankapp.daos.models.Users;
+import com.revature.bankapp.models.Users;
 
 public class UserDao {
     public static boolean checkEmail(String email) {
     }
 
-    public Users[] findAll() {
+    public <Users> Users[] findAll() {
     }
 
     public Users findById(String id) {

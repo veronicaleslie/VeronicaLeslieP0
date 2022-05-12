@@ -1,4 +1,4 @@
-package main.java.bankapp.util;
+package com.revature.bankapp.util;
 
 import java.io.FileReader;
 import java.io.IOException;
