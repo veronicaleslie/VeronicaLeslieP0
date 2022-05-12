@@ -1,6 +1,8 @@
-package com.revature.bankapp.services;
+package com.revature.bankapp.service;
 
-import com.revature.bankapp.models.Users;
+import com.revature.bankapp.model.Users;
+
+;
 
 
 public interface Serviceable<U> {

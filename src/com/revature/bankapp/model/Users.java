@@ -1,4 +1,4 @@
-package com.revature.bankapp.models;
+package com.revature.bankapp.model;
 
 
 public class Users {
@@ -30,9 +30,9 @@ public class Users {
         this.username = username;
     }
 
-    public Users(String password){
-        this.password = password;
-    }
+    //public Users(String password){
+        //this.password = password;
+    //}
 
     // public is allowing any instance of class to leverage this command
     // This is a constructor because it's using the class name

@@ -1,16 +1,12 @@
-package com.revature.bankapp.services;
+package com.revature.bankapp.service;
 
+import com.revature.bankapp.daos.UserDao;
 import com.revature.bankapp.exceptions.AuthenticationException;
 import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
-import main.java.bankapp.exceptions.AuthenticationException;
-import main.java.bankapp.exceptions.InvalidRequestException;
-import main.java.bankapp.exceptions.ResourcePersistanceException;
-import main.java.bankapp.util.logging.Logger;
-import main.java.models.Users;
-import serviceable.==
+import com.revature.bankapp.util.logging.Logger;
 
-public class UserServices<Users> implements Serviceable<Users>{
+public class UserServices<Users> implements Serviceable<Users> {
 
     private UserDao userDao;
     private Logger logger = Logger.getLogger();
@@ -21,9 +17,14 @@ public class UserServices<Users> implements Serviceable<Users>{
 
 
     @Override
-    public Users readById(String id){
+    public com.revature.bankapp.model.Users readById(String id){
         Users users = userDao.findById(id);
         return users;
+    }
+
+    @Override
+    public com.revature.bankapp.model.Users update(com.revature.bankapp.model.Users updatedObject) {
+        return null;
     }
 
     @Override
