@@ -1,4 +1,4 @@
-package com.revature.bankapp.util.logging.;
+package main.java.bankapp.util.logging.;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class Logger {
 
     public void log(String message){
 
-        try (Writer logWriter = new FileWriter("src/main/resources/pokedex.log", true);){
+        try (Writer logWriter = new FileWriter("src/main/resources/bankapp.log", true);){
             logWriter.write(LocalDateTime.now().toString() + " LOG: " + message + "\n");
 
             if(printToConsole){
@@ -48,7 +48,7 @@ public class Logger {
     }
 
     public void info(String message){
-        try (Writer logWriter = new FileWriter("src/main/resources/pokedex.log", true);){
+        try (Writer logWriter = new FileWriter("src/main/resources/bankapp.log", true);){
             logWriter.write(LocalDateTime.now().toString() + " INFO: " + message + "\n");
 
             if(printToConsole){
@@ -61,7 +61,7 @@ public class Logger {
     }
 
     public void debug(String message){
-        try (Writer logWriter = new FileWriter("src/main/resources/pokedex.log", true);){
+        try (Writer logWriter = new FileWriter("src/main/resources/bankapp.log", true);){
             logWriter.write(LocalDateTime.now().toString() + " DEBUG: " + message + "\n");
 
             if(printToConsole){
@@ -74,7 +74,7 @@ public class Logger {
     }
 
     public void warn(String message){
-        try (Writer logWriter = new FileWriter("src/main/resources/pokedex.log", true);){
+        try (Writer logWriter = new FileWriter("src/main/resources/bankapp.log", true);){
             logWriter.write(LocalDateTime.now().toString() + " WARN: " + message + "\n");
 
             if(printToConsole){
