@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/exception/AuthenticationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/exception/InvalidRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/exception/ResourcePersistanceException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/models/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/model/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/services/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/AccountServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/services/Serviceable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/util/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/util/logging/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -61,6 +55,9 @@
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\com\revature\bankapp\model" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.revature.bankapp.daos" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.revature.bankapp.daos" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -102,17 +99,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

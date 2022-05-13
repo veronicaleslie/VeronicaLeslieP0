@@ -1,4 +1,24 @@
 package com.revature.bankapp.daos;
 
-public interface Crudable {
+import com.revature.bankapp.model.Users;
+
+import java.io.IOException;
+
+public interface Crudable<U> {
+    Users create(Users newUser);
+
+    //@Override
+    Users[] findAll() throws IOException;
+
+    Object findById(String id);
+
+    boolean update(Users updatedObj);
+
+    //@Override
+    boolean delete(String id);
+
+
+    Users authenticateUser(String email, String password);
+
+    boolean checkEmail(String email);
 }

@@ -10,5 +10,7 @@ public interface Serviceable<U> {
 
     Users update(Users updatedObject);
 
+    U update(U updatedObject);
+
     boolean delete(String id);
 }

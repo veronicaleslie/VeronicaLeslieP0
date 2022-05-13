@@ -1,7 +1,6 @@
 package com.revature.bankapp.daos;
 
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
-
 import com.revature.bankapp.model.Users;
 import com.revature.bankapp.util.ConnectionFactory;
 import com.revature.bankapp.util.logging.Logger;
@@ -9,7 +8,7 @@ import com.revature.bankapp.util.logging.Logger;
 import java.io.IOException;
 import java.sql.*;
 
-public class UserDao {
+public class UserDao implements Crudable<Users> {
     private Logger logger = Logger.getLogger();
 
     @Override
@@ -53,6 +52,7 @@ public class UserDao {
     }
 
     //@Override
+    @Override
     public Users[] findAll() throws IOException {
 
         // making an array of Trainer classes, and seetting it to a max size of 10
@@ -63,7 +63,7 @@ public class UserDao {
         // TODO: we trying something here and passing an argumetn???
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) { // try with resoruces, because Connection extends the interface Auto-Closeable
 
-            String sql = "select * from trainer";
+            String sql = "select * from user_account";
             Statement s = conn.createStatement();
 
             // conn.createStatement().executeQuery("select * from trainer"); fine but generally not used
@@ -95,11 +95,12 @@ public class UserDao {
         return users;
     }
 
+    @Override
     public Object findById(String id) {
 
         try(Connection conn = ConnectionFactory.getInstance().getConnection();){
 
-            String sql = "select * from trainer where id = ?";
+            String sql = "select * from user_account where id = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -107,9 +108,11 @@ public class UserDao {
 
             ResultSet rs = ps.executeQuery(); // remember dql, bc selects are the keywords
 
-            if(!rs.next()){
+            if(!rs.next()) {
                 Users user;
-                throw new ResourcePersistanceException("User was not found in the database, please check ID entered was correct user."
+                throw new ResourcePersistanceException("User was not found in the database, please check ID entered was correct user.");
+            }
+
             Users user = new Users();
 
             user.setFirst_name(rs.getString("first_name")); // this column lable MUST MATCH THE DB
@@ -123,26 +126,20 @@ public class UserDao {
         } catch (SQLException e){
             e.printStackTrace();
             return null;
-        }
-
-    } catch (ResourcePersistanceException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
+        } catch (ResourcePersistanceException e) {
             throw new RuntimeException(e);
         }
-
-        //@Override
-    //public boolean update(Users updatedObj) {
-        //return false;
     }
-
-    }
+    @Override
+    public boolean update(Users updatedObj) {return false;}
     //@Override
+    @Override
     public boolean delete(String id) {
         return false;
     }
 
-    public Users authenticateTrainer(String email, String password){
+    @Override
+    public Users authenticateUser(String email, String password){
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()){
             String sql = "select * from trainer where email = ? and password = ?";
@@ -158,8 +155,8 @@ public class UserDao {
 
             Users user = new Users();
 
-            user.setFirst_name(rs.getString("fname")); // this column lable MUST MATCH THE DB
-            user.setLast_name(rs.getString("lname"));
+            user.setFirst_name(rs.getString("first_name")); // this column lable MUST MATCH THE DB
+            user.setLast_name(rs.getString("last_name"));
             user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
@@ -173,6 +170,7 @@ public class UserDao {
 
 
     }
+    @Override
     public boolean checkEmail(String email) {
 
         try(Connection conn = ConnectionFactory.getInstance().getConnection()){
