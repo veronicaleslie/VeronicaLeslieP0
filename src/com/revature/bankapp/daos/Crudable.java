@@ -18,7 +18,12 @@ public interface Crudable<U> {
     boolean delete(String id);
 
 
-    Users authenticateUser(String email, String password);
+
+
+
+    static Users authenticateUser(String email, String password) {
+        return null;
+    }
 
     boolean checkEmail(String email);
 }

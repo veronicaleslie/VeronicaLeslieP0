@@ -138,11 +138,11 @@ public class UserDao implements Crudable<Users> {
         return false;
     }
 
-    @Override
-    public Users authenticateUser(String email, String password){
+
+    public static Users authenticateUser(String email, String password){
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()){
-            String sql = "select * from trainer where email = ? and password = ?";
+            String sql = "select * from user_account where email = ? and password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, email);
             ps.setString(2, password);

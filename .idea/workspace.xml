@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Banking_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Banking_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainDriver.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,6 +45,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "C:/Revature/Projects/projectP0/Banking_Project/src/com/revature/bankapp/dao",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>

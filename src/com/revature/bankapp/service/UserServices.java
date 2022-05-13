@@ -1,5 +1,6 @@
 package com.revature.bankapp.service;
 
+import com.revature.bankapp.daos.Crudable;
 import com.revature.bankapp.daos.UserDao;
 import com.revature.bankapp.exceptions.AuthenticationException;
 import com.revature.bankapp.exceptions.InvalidRequestException;
@@ -24,7 +25,7 @@ public class UserServices implements Serviceable<Users>{
 
         try {
             // TODO: What trainerDao intellisense telling me?
-            Users[] trainers = userDao.findAll();
+            Users[] users = userDao.findAll();
             logger.info("All trainers have been found here are the results: \n");
 //
             return users;
@@ -36,14 +37,9 @@ public class UserServices implements Serviceable<Users>{
     }
 
     @Override
-    public Trainer readById(String id){
-        try {
-            Trainer trainer = trainerDao.findById(id);
-            return trainer;
-        } catch (ResourcePersistanceException e){
-            logger.warn(e.getMessage());
-            return null;
-        }
+    public Users readById(String id){
+        Users user = (Users) userDao.findById(id);
+        return user;
     }
 
     @Override
@@ -51,10 +47,6 @@ public class UserServices implements Serviceable<Users>{
         return null;
     }
 
-    @Override
-    public Trainer update(Trainer updatedObject) {
-        return null;
-    }
 
     @Override
     public boolean delete(String id) {
@@ -62,54 +54,53 @@ public class UserServices implements Serviceable<Users>{
     }
 
     public boolean validateEmailNotUsed(String email){
-        return trainerDao.checkEmail(email);
+        return userDao.checkEmail(email);
     }
 
-    public Trainer create(Trainer newTrainer){
-        logger.info("Trainer trying to be registered: " + newTrainer);
-        if(!validateInput(newTrainer)){ // checking if false
+    public Users create(Users newUser) throws InvalidRequestException, ResourcePersistanceException {
+        logger.info("User trying to be registered: " + newUser);
+        if(!validateInput(newUser)){ // checking if false
             // TODO: throw - what's this keyword?
             throw new InvalidRequestException("User input was not validated, either empty String or null values");
         }
 
         // TODO: Will implement with JDBC (connecting to our database)
-        if(validateEmailNotUsed(newTrainer.getEmail())){
+        if(validateEmailNotUsed(newUser.getEmail())){
             throw new InvalidRequestException("User email is already in use. Please try again with another email or login into previous made account.");
         }
 
-        Trainer persistedTrainer = trainerDao.create(newTrainer);
+        Users persistedUser = userDao.create(newUser);
 
-        if(persistedTrainer == null){
-            throw new ResourcePersistanceException("Trainer was not persisted to the database upon registration");
+        if(persistedUser == null){
+            throw new ResourcePersistanceException("User was not persisted to the database upon registration");
         }
-        logger.info("Trainer has been persisted: " + newTrainer);
-        return persistedTrainer;
+        logger.info("User has been persisted: " + newUser);
+        return persistedUser;
     }
 
-    @Override
-    public boolean validateInput(Trainer newTrainer) {
-        logger.debug("Validating Trainer: " + newTrainer);
-        if(newTrainer == null) return false;
-        if(newTrainer.getFname() == null || newTrainer.getFname().trim().equals("")) return false;
-        if(newTrainer.getLname() == null || newTrainer.getLname().trim().equals("")) return false;
-        if(newTrainer.getEmail() == null || newTrainer.getEmail().trim().equals("")) return false;
-        if(newTrainer.getPassword() == null || newTrainer.getPassword().trim().equals("")) return false;
-        return newTrainer.getDob() != null || !newTrainer.getDob().trim().equals("");
+    public boolean validateInput(Users newUser) {
+        logger.debug("Validating User: " + newUser);
+        if(newUser == null) return false;
+        if(newUser.getFirst_name() == null || newUser.getFirst_name().trim().equals("")) return false;
+        if(newUser.getLast_name() == null || newUser.getLast_name().trim().equals("")) return false;
+        if(newUser.getEmail() == null || newUser.getEmail().trim().equals("")) return false;
+        if(newUser.getPassword() == null || newUser.getPassword().trim().equals("")) return false;
+        return newUser.getUsername() != null || !newUser.getUsername().trim().equals("");
     }
 
-    public Trainer authenticateTrainer(String email, String password){
+    public Users authenticateUser(String email, String password) throws InvalidRequestException, AuthenticationException {
 
         if(password == null || password.trim().equals("") || password == null || password.trim().equals("")) {
             throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
         }
 
-        Trainer authenticatedTrainer = trainerDao.authenticateTrainer(email, password);
+        Users authenticatedUser = Crudable.authenticateUser(email, password);
 
-        if (authenticatedTrainer == null){
+        if (authenticatedUser == null){
             throw new AuthenticationException("Unauthenticated user, information provided was not consistent with our database.");
         }
 
-        return authenticatedTrainer;
+        return authenticatedUser;
 
     }
 }
