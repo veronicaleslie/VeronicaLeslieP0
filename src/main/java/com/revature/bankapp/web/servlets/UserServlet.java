@@ -5,18 +5,17 @@ import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Users;
 import com.revature.bankapp.service.UserServices;
 import com.revature.bankapp.util.logging.Logger;
-import com.revature.bankapp.web.Authable;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
-import static com.revature.bankapp.web.servlets.Authable;
 
-
-public class UserServlet implements com.revature.bankapp.web.Authable {
+public class UserServlet extends HttpServlet {
 
     private final UserServices userServices;
     private final ObjectMapper mapper;
@@ -27,7 +26,7 @@ public class UserServlet implements com.revature.bankapp.web.Authable {
         this.mapper = mapper;
     }
 
-    @Override
+    //@Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if(!Authable.checkAuth(req, resp)) return;
@@ -48,24 +47,24 @@ public class UserServlet implements com.revature.bankapp.web.Authable {
             Users user;
             try {
                 user = userServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
-            } catch (ResourcePersistanceException e){
-                logger.warn(e.getMessage());
-                resp.setStatus(404);
-                resp.getWriter().write(e.getMessage());
-                return;
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+                //resp.setStatus(404);
             }
+
+
             String payload = mapper.writeValueAsString(user);
             resp.getWriter().write(payload);
             return;
         }
 
-        List<Users> users = userServices.readAll();
+        List<Users> users = Arrays.asList(userServices.readAll());
         String payload = mapper.writeValueAsString(users);
 
         resp.getWriter().write(payload);
     }
 
-    @Override
+    //@Override
     public void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }

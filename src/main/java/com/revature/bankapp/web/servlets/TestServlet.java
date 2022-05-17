@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/test")
-public class TestServlet {
+public class TestServlet extends HttpServlet {
 
-    @Override
+    //@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.getWriter().write("<h1>/test works on our bankapp application!!</h1>");
+        resp.getWriter().write("<h1>/YAY test works on your bankapp application!!</h1>");
     }
 
 }

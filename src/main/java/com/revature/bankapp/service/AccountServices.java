@@ -3,8 +3,7 @@ package com.revature.bankapp.service;
 import com.revature.bankapp.daos.AccountDao;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Account;
-import com.revature.bankapp.models.Account;
-import com.revature.bankapp.models.Users;
+import com.revature.bankapp.model.Users;
 import com.revature.bankapp.util.logging.Logger;
 
 import java.io.IOException;
@@ -16,17 +15,17 @@ public class AccountServices {
     }
 
     public Account[] readAccount(String email) {
-        com.revature.bankapp.model.Account[] account = new account[0];
+       Account[] accounts = new Account[0];
         try {
-            account = accountDao.findAll(email);
-            for (int i = 0; i < account.length; i++) {
-                Account account = account[i];
+            accounts = accountDao.findAll(email);
+            for (int i = 0; i < accounts.length; i++) {
+                Account account = accounts[i];
                 System.out.println(account.toString());
             }
-        } catch (IOException | NullPointerException e) {
+        } catch (NullPointerException e) {
             // e.printStackTrace();
         }
-        return account;
+        return accounts;
     }
     public void deposit(String value, String id){
         accountDao.deposit(value, id);
@@ -36,7 +35,7 @@ public class AccountServices {
         accountDao.withdraw(value, id);
     }
 
-    public boolean registerAccount(account newAccount){
+    public boolean registerAccount(Account newAccount){
         if(!validateAccountInput(newAccount)){ // checking if false
             throw new RuntimeException();
         }
@@ -52,7 +51,7 @@ public class AccountServices {
         System.out.println("Account has been registered: " + newAccount);
         return true;
     }
-    private boolean validateAccountInput(account newAccount) {
+    private boolean validateAccountInput(Account newAccount) {
         if(newAccount == null) return false;
         if(newAccount.getAccountID() == 0) return false;
         if(newAccount.getAccountName() == null || newAccount.getAccountName().trim().equals("")) return false;
@@ -60,11 +59,22 @@ public class AccountServices {
     }
     public Account readAccountById(String id) {
         Logger logger = null;
-        Account account = new account();
+        Account account = new Account();
         try {
             account = accountDao.findById(id);
-        }catch (ResourcePersistanceException e){
-            logger.warn("Id was not found");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return account;
+    }
+
+    public Object readAccounts(String email) {
+        Logger logger = null;
+        Account account = new Account();
+        try {
+            account = accountDao.readAccount(email);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
         return account;
     }

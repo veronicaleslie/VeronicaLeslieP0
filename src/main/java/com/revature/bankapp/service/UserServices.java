@@ -7,7 +7,6 @@ import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.util.logging.Logger;
 import com.revature.bankapp.model.Users;
-import src.com.revature.bankapp.daos.UserDao;
 
 import java.io.IOException;
 
