@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/WEBINF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/AccountServlets.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/Authable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/HttpServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/TestServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/UserServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
