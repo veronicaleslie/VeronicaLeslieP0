@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/dto/LoginCreds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AccountServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/revature/bankapp/services/UserServiceTestSuite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Banking_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Banking_Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/AccountDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/exception/AuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/exception/AuthenticationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/exception/InvalidRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/exception/InvalidRequestException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/exception/ResourcePersistanceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/exception/ResourcePersistanceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/AccountServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/UserServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/util/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/Authable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/TestServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AccountServlets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/Authable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/Authable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/TestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEBINF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEBINF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEBINF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +48,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/Revature/Projects/projectP0/Banking_Project/src/main/java",
+    "last_opened_file_path": "C:/Revature/Projects/README.md",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.externalResources"
+    "settings.editor.selected.configurable": "Settings.Markdown"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -85,6 +67,7 @@
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\com\revature\bankapp\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\main" />
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\webapp" />
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\com\revature\bankapp" />
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\webapp" />

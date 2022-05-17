@@ -27,7 +27,7 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
         try {
             // TODO: What trainerDao intellisense telling me?
             Users[] users = userDao.findAll();
-            logger.info("All trainers have been found here are the results: \n");
+            logger.info("All users have been found here are the results: \n");
 //
             return users;
 
