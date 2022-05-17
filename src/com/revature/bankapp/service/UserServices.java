@@ -7,9 +7,11 @@ import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.util.logging.Logger;
 import com.revature.bankapp.model.Users;
+import src.com.revature.bankapp.daos.UserDao;
+
 import java.io.IOException;
 
-public class UserServices implements Serviceable<Users>{
+public class UserServices implements com.revature.bankapp.service.Serviceable<Users> {
 
     private UserDao userDao;
     private Logger logger = Logger.getLogger();

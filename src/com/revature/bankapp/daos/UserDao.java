@@ -1,4 +1,4 @@
-package com.revature.bankapp.daos;
+package src.com.revature.bankapp.daos;
 
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Users;
@@ -8,7 +8,7 @@ import com.revature.bankapp.util.logging.Logger;
 import java.io.IOException;
 import java.sql.*;
 
-public class UserDao implements Crudable<Users> {
+public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
     private Logger logger = Logger.getLogger();
 
     @Override

@@ -5,14 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/WEBINF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/Authable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/HttpServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/TestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/revature/bankapp/web/servlets/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Banking_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Banking_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainDriver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/AccountDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/Crudable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/daos/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/exception/AuthenticationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/exception/InvalidRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/exception/ResourcePersistanceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/exceptions/AuthenticationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/exceptions/InvalidRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/exceptions/ResourcePersistanceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/model/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/model/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/AccountServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/Serviceable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/util/ConnectionFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/revature/bankapp/util/logging/Logger.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,20 +62,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "C:/Revature/Projects/projectP0/Banking_Project/src/com/revature/bankapp/dao",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings"
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.externalResources"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="src.com.revature.bankapp.web.servlets" />
       <recent name="com.revature.bankapp.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\com\revature\bankapp\dao" />
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\com\revature\bankapp\service" />
       <recent name="C:\Revature\Projects\projectP0\Banking_Project\src\com\revature\bankapp\model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Revature\Projects\projectP0\Banking_Project\src" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.revature.bankapp.daos" />
@@ -70,19 +91,46 @@
       <recent name="com.revature.bankapp.exception" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="MainDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainDriver" />
+  <component name="RunManager" selected="Maven.bankapp">
+    <configuration type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="jdk.jfr.internal.tool.Main" />
       <module name="Banking_Project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.MainDriver" />
-      </list>
-    </recent_temporary>
+    <configuration name="bankapp" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+                <option value="tomcat7:deploy" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.bankapp" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -106,8 +154,22 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/revature/bankapp/service/UserServices.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Banking_Project$Main.ic" NAME="Main Coverage Results" MODIFIED="1652669150189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

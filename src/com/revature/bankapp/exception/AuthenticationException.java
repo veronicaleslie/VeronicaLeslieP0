@@ -1,4 +1,4 @@
-package com.revature.bankapp.exception;
+package src.com.revature.bankapp.exception;
 
 public class AuthenticationException extends Throwable {
     public AuthenticationException(String s) {
