@@ -14,6 +14,6 @@ public class AccountDao {
     public com.revature.bankapp.model.Account[] findAll(String email) {
     }
 
-    public com.revature.bankapp.model.Account findById(java.lang.String id) {
+    public com.revature.bankapp.model.Account findById(String id) {
     }
 }
