@@ -114,10 +114,9 @@ public class AccountServices {
 
     }
 
-    private boolean withdrawAmount(String deposit) {
+    private boolean withdrawAmount() {
     }
 
-    //if(bankAccountData.getBankAccountName() == null || bankAccountData.getBankAccountName().trim().equals("")) return false;
     public boolean depositCheck(String deposit) {
 
         if (Integer.parseInt(deposit) < 0 || deposit.equals("")) return false;
