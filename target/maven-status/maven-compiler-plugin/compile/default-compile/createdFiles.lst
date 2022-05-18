@@ -18,5 +18,6 @@ com\revature\bankapp\web\servlets\AccountServlet.class
 com\revature\bankapp\daos\exception\InvalidRequestException.class
 com\revature\bankapp\web\servlets\UserServlet.class
 com\revature\bankapp\web\servlets\Authable.class
+com\revature\bankapp\web\util\ContextLoaderListener.class
 com\revature\bankapp\util\ConnectionFactory.class
 com\revature\bankapp\exceptions\AuthenticationException.class

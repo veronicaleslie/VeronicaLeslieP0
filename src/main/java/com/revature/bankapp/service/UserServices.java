@@ -11,13 +11,13 @@ import com.revature.bankapp.model.Users;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet("/auth")
+//@WebServlet("/auth")
 public class UserServices implements com.revature.bankapp.service.Serviceable<Users> {
 
-    private UserDao userDao;
-    private Logger logger = Logger.getLogger();
+    private final UserDao userDao;
+    private final Logger logger = Logger.getLogger();
 
-    public UserServices(UserDao trainerDao) {
+    public UserServices(UserDao userDao) {
         this.userDao = userDao;
     }
 
@@ -41,8 +41,7 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
 
     @Override
     public Users readById(String id){
-        Users user = (Users) userDao.findById(id);
-        return user;
+        return (Users) userDao.findById(id);
     }
 
     @Override
@@ -93,7 +92,7 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
 
     public Users authenticateUser(String email, String password) throws InvalidRequestException, AuthenticationException {
 
-        if(password == null || password.trim().equals("") || password == null || password.trim().equals("")) {
+        if(password == null || password.trim().equals("")) {
             throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
         }
 

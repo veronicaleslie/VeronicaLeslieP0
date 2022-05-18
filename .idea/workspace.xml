@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/util/ContextLoaderListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/AccountServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VeronicaLeslieP0" beforeDir="false" afterPath="$PROJECT_DIR$/VeronicaLeslieP0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VeronicaLeslieP0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/VeronicaLeslieP0/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/UserServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AuthServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT.war" afterDir="false" />
@@ -15,6 +18,8 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/UserServices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AuthServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -49,10 +55,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/Revature/Projects/README.md",
+    "last_opened_file_path": "C:/Revature/Projects/poke_project-servlet_pokedex",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",

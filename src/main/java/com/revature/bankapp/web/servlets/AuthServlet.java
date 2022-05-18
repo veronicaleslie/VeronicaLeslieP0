@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+//@WebServlet("/auth")
+
+
 public class AuthServlet extends HttpServlet {
 
     private final UserServices userServices;
