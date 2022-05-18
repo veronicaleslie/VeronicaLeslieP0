@@ -1,15 +1,15 @@
 package com.revature.bankapp.service;
 
 import com.revature.bankapp.daos.AccountDao;
-import com.revature.bankapp.exceptions.ResourcePersistanceException;
+import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.model.Account;
-import com.revature.bankapp.model.Users;
 import com.revature.bankapp.util.logging.Logger;
 
 import java.io.IOException;
 
 public class AccountServices {
     private AccountDao accountDao = new AccountDao();
+    private String value;
 
     public AccountServices(com.revature.bankapp.daos.AccountDao accountDao) {
     }
@@ -30,10 +30,11 @@ public class AccountServices {
     public void deposit(String value, String id){
         accountDao.deposit(value, id);
     }
-    public void withdraw(String value, String id){
-
-        accountDao.withdraw(value, id);
+    public void withdraw(String value, String id){ accountDao.withdraw(value, id);
     }
+
+
+
 
     public boolean registerAccount(Account newAccount){
         if(!validateAccountInput(newAccount)){ // checking if false
@@ -78,4 +79,63 @@ public class AccountServices {
         }
         return account;
     }
+    public boolean updateAccountN(String id2, String newAccount) {
+        boolean updatedAccount = AccountDao.update(id2, newAccount);
+
+        return updatedAccount;
+
+    }
+
+
+    public Account deposit(String deposit, String id) throws InvalidRequestException {
+
+        if (depositCheck(deposit) == false) {
+            throw new InvalidRequestException("Invalid Amount: Amount must exceed 0");
+        }
+        Account depositInAccount = AccountDao.deposit(deposit, id);
+
+
+        return depositInAccount;
+
+    }
+
+    public Account withdraw(String deposit, String id) throws InvalidRequestException {
+
+
+        if (withdrawAmount(deposit) == false) {
+            throw new InvalidRequestException("Invalid Amount: Amount must exceed 0 or Amount cannot exceed balance");
+        }
+
+        Account withdrawAmount = AccountDao.withdraw(deposit, id);
+
+        //
+
+        return withdrawAmount;
+
+    }
+
+    private boolean withdrawAmount(String deposit) {
+    }
+
+    //if(bankAccountData.getBankAccountName() == null || bankAccountData.getBankAccountName().trim().equals("")) return false;
+    public boolean depositCheck(String deposit) {
+
+        if (Integer.parseInt(deposit) < 0 || deposit.equals("")) return false;
+
+
+
+        return true;
+    }
+
+    public boolean withdrawAmount(String deposit) {
+
+        if (Integer.parseInt(deposit) < 0 || deposit.equals("")) return false;
+
+        if (Account.getCurrentAccountAmount()- Integer.parseInt(deposit) < 0) return false;
+
+        return true;
+    }
+
+
+}
 }

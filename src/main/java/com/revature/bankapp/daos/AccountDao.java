@@ -4,10 +4,16 @@ package com.revature.bankapp.daos;
 import com.revature.bankapp.model.Account;
 
 public class AccountDao {
-    public void deposit(String value, String id) {
+    public static boolean update(String id2, String newAccount) {
+        return false;
     }
 
-    public void withdraw(String value, String id) {
+    public static Account deposit(String value, String id) {
+        return null;
+    }
+
+    public static Account withdraw(String value, String id) {
+        return null;
     }
 
     public com.revature.bankapp.model.Account create(com.revature.bankapp.model.Account newAccount) {

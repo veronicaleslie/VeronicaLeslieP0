@@ -8,8 +8,10 @@ import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.util.logging.Logger;
 import com.revature.bankapp.model.Users;
 
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
+@WebServlet("/auth")
 public class UserServices implements com.revature.bankapp.service.Serviceable<Users> {
 
     private UserDao userDao;

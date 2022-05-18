@@ -18,6 +18,9 @@ public class Account {
 
     }
 
+    public static int getCurrentAccountAmount() {
+    }
+
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
