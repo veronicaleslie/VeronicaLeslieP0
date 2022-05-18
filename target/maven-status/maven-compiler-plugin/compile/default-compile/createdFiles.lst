@@ -5,6 +5,7 @@ com\revature\bankapp\exceptions\ResourcePersistanceException.class
 com\revature\bankapp\daos\exception\AuthenticationException.class
 com\revature\bankapp\web\servlets\TestServlet.class
 com\revature\bankapp\model\Account.class
+com\revature\bankapp\web\servlets\AuthServlet.class
 com\revature\bankapp\daos\UserDao.class
 com\revature\bankapp\model\Users.class
 com\revature\bankapp\util\logging\Logger.class
