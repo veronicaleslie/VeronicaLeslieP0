@@ -5,8 +5,6 @@ import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.model.Account;
 import com.revature.bankapp.util.logging.Logger;
 
-import java.io.IOException;
-
 public class AccountServices {
     private AccountDao accountDao = new AccountDao();
     private String value;
@@ -26,11 +24,6 @@ public class AccountServices {
             // e.printStackTrace();
         }
         return accounts;
-    }
-    public void deposit(String value, String id){
-        accountDao.deposit(value, id);
-    }
-    public void withdraw(String value, String id){ accountDao.withdraw(value, id);
     }
 
 
@@ -79,7 +72,7 @@ public class AccountServices {
         }
         return account;
     }
-    public boolean updateAccountN(String id2, String newAccount) {
+    public boolean updateAccount(String id2, String newAccount) {
         boolean updatedAccount = AccountDao.update(id2, newAccount);
 
         return updatedAccount;
@@ -87,15 +80,13 @@ public class AccountServices {
     }
 
 
-    public Account deposit(String deposit, String id) throws InvalidRequestException {
+    public void deposit(String deposit, String id) throws InvalidRequestException {
 
         if (depositCheck(deposit) == false) {
             throw new InvalidRequestException("Invalid Amount: Amount must exceed 0");
         }
         Account depositInAccount = AccountDao.deposit(deposit, id);
 
-
-        return depositInAccount;
 
     }
 
@@ -114,8 +105,6 @@ public class AccountServices {
 
     }
 
-    private boolean withdrawAmount() {
-    }
 
     public boolean depositCheck(String deposit) {
 
@@ -137,4 +126,4 @@ public class AccountServices {
 
 
 }
-}
+

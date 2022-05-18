@@ -1,6 +1,7 @@
 package com.revature.bankapp.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Account;
 import com.revature.bankapp.service.AccountServices;
@@ -53,7 +54,7 @@ public class AccountServlet extends HttpServlet {
                 accountServices.deposit(req.getParameter("value"), req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
                 account = accountServices.readAccountById(req.getParameter("id"));
 
-            } catch (Exception e) {
+            } catch (InvalidRequestException e) {
                 throw new RuntimeException(e);
             }
 

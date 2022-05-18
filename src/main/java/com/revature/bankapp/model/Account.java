@@ -19,6 +19,7 @@ public class Account {
     }
 
     public static int getCurrentAccountAmount() {
+        return 0;
     }
 
     public void setAccountName(String accountName) {
