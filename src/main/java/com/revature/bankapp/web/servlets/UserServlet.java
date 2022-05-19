@@ -7,6 +7,7 @@ import com.revature.bankapp.service.UserServices;
 import com.revature.bankapp.util.logging.Logger;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-
+@WebServlet("/users")
 public class UserServlet extends HttpServlet {
 
     private final UserServices userServices;
@@ -65,8 +66,7 @@ public class UserServlet extends HttpServlet {
     }
 
     //@Override
-    public void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+   // public void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
 
-}

@@ -5,8 +5,12 @@ import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.model.Account;
 import com.revature.bankapp.util.logging.Logger;
 
+import javax.servlet.annotation.WebServlet;
+
+
+//@WebServlet("/accounts")
 public class AccountServices {
-    private AccountDao accountDao = new AccountDao();
+    private final AccountDao accountDao = new AccountDao();
     private String value;
 
     public AccountServices(com.revature.bankapp.daos.AccountDao accountDao) {
@@ -79,25 +83,21 @@ public class AccountServices {
 
     }
 
+    
 
-    public void deposit(String deposit, String id) throws InvalidRequestException {
-
-        if (depositCheck(deposit) == false) {
-            throw new InvalidRequestException("Invalid Amount: Amount must exceed 0");
-        }
-        Account depositInAccount = AccountDao.deposit(deposit, id);
-
-
+    private boolean depositAmount(String deposit) {
+        return false;
     }
 
     public Account withdraw(String deposit, String id) throws InvalidRequestException {
 
 
+        Account withdrawAmount;
         if (withdrawAmount(deposit) == false) {
             throw new InvalidRequestException("Invalid Amount: Amount must exceed 0 or Amount cannot exceed balance");
         }
 
-        Account withdrawAmount = AccountDao.withdraw(deposit, id);
+        withdrawAmount = AccountDao.withdraw(deposit, id);
 
         //
 
@@ -105,25 +105,13 @@ public class AccountServices {
 
     }
 
-
-    public boolean depositCheck(String deposit) {
-
-        if (Integer.parseInt(deposit) < 0 || deposit.equals("")) return false;
-
-
-
-        return true;
+    private boolean withdrawAmount(String deposit) {
+        return false;
     }
 
-    public boolean withdrawAmount(String deposit) {
 
-        if (Integer.parseInt(deposit) < 0 || deposit.equals("")) return false;
-
-        if (Account.getCurrentAccountAmount()- Integer.parseInt(deposit) < 0) return false;
-
-        return true;
+    public void deposit(String value, String id) throws InvalidRequestException {
     }
-
 
 }
 

@@ -62,4 +62,7 @@ public class Account {
                 ", balance='" + balance + '\'' +
                 '}';
     }
+
+    public void Username(String first_name) {
+    }
 }

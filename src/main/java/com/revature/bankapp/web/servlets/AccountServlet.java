@@ -2,11 +2,11 @@ package com.revature.bankapp.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.bankapp.exceptions.InvalidRequestException;
-import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Account;
 import com.revature.bankapp.service.AccountServices;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,12 +14,14 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
+@WebServlet("/accounts")
 public class AccountServlet extends HttpServlet {
     private final AccountServices accountServices;
     private final ObjectMapper mapper;
 
-    public AccountServlet(AccountServices accountServices,ObjectMapper mapper) {
+    public AccountServlet(AccountServices accountServices, ObjectMapper mapper) {
         this.accountServices = accountServices;
         this.mapper = mapper;
     }
@@ -38,12 +40,13 @@ public class AccountServlet extends HttpServlet {
             return;
         }
 
-    //    List<Account> accounts = Arrays.asList(accountServices.readAccounts(req.getParameter("email")));
+        //    List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("email")));
         List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
         String payload = mapper.writeValueAsString(accounts);
 
         resp.getWriter().write(payload);
     }
+
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (checkAuth(req, resp)) return;
         //TODO: Add account auth
@@ -67,9 +70,10 @@ public class AccountServlet extends HttpServlet {
 
 
     }
-    protected boolean checkAuth (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    protected boolean checkAuth(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession httpSession = req.getSession();
-        if (httpSession.getAttribute("authUser") == null){
+        if (httpSession.getAttribute("authUser") == null) {
             resp.getWriter().write("Unauthorized request - not logged in ");
             resp.setStatus(401);
             return true;
@@ -78,4 +82,51 @@ public class AccountServlet extends HttpServlet {
 
     }
 
+    class BankDetails {
+        private String username;
+        private String acc_type;
+        private long balance;
+        Scanner sc = new Scanner(System.in);
+
+        //method to open new account
+        public void openAccount() {
+            System.out.print("Enter Account type: ");
+            acc_type = sc.next();
+            System.out.print("Enter Username: ");
+            username = sc.next();
+            System.out.print("Enter Balance: ");
+            balance = sc.nextLong();
+        }
+
+        //method to display account details
+        public void showAccount() {
+            System.out.println("Name of account holder: " + username);
+            System.out.println("Balance: " + balance);
+        }
+
+        //method to deposit money
+        public void deposit() {
+            long amt;
+            System.out.println("Enter deposit amount: ");
+            amt = sc.nextLong();
+            balance = balance + amt;
+        }
+
+        //method to withdraw money
+        public void withdrawal() {
+            long amt;
+            System.out.println("Enter the amount you want to withdraw: ");
+            amt = sc.nextLong();
+            if (balance >= amt) {
+                balance = balance - amt;
+                System.out.println("Balance after withdrawal: " + balance);
+            } else {
+                System.out.println("Withdrawal cannot exceed balance " + amt + "\tTransaction failed...!!");
+                if (amt <= 0) {
+                    System.out.println("Amount must exceed 0");
+                }
+            }
+
+        }
+    }
 }

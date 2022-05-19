@@ -11,7 +11,7 @@ import com.revature.bankapp.model.Users;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-//@WebServlet("/auth")
+
 public class UserServices implements com.revature.bankapp.service.Serviceable<Users> {
 
     private final UserDao userDao;
@@ -27,7 +27,6 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
 
 
         try {
-            // TODO: What trainerDao intellisense telling me?
             Users[] users = userDao.findAll();
             logger.info("All users have been found here are the results: \n");
 //
@@ -96,7 +95,7 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
             throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
         }
 
-        Users authenticatedUser = Crudable.authenticateUser(email, password);
+        Users authenticatedUser = userDao.authenticateUser(email, password);
 
         if (authenticatedUser == null){
             throw new AuthenticationException("Unauthenticated user, information provided was not consistent with our database.");
