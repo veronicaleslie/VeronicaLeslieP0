@@ -5,8 +5,6 @@ import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.model.Account;
 import com.revature.bankapp.util.logging.Logger;
 
-import javax.servlet.annotation.WebServlet;
-
 
 //@WebServlet("/accounts")
 public class AccountServices {
@@ -110,7 +108,8 @@ public class AccountServices {
     }
 
 
-    public void deposit(String value, String id) throws InvalidRequestException {
+    public Object deposit(String value, String id) throws InvalidRequestException {
+        return null;
     }
 
 }

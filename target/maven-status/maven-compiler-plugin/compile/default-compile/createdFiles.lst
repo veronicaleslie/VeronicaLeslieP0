@@ -1,5 +1,6 @@
 com\revature\bankapp\daos\exception\ResourcePersistanceException.class
 com\revature\bankapp\util\logging\Logger.class
+com\revature\bankapp\web\servlets\TransactionServlet.class
 com\revature\bankapp\service\UserServices.class
 com\revature\bankapp\daos\AccountDao.class
 com\revature\bankapp\daos\Crudable.class
@@ -15,11 +16,12 @@ com\revature\bankapp\service\AccountServices.class
 com\revature\bankapp\web\dto\LoginCreds.class
 com\revature\bankapp\exceptions\ResourcePersistanceException.class
 com\revature\bankapp\daos\exception\AuthenticationException.class
+com\revature\bankapp\web\servlets\TransactionServlet$1BankDetails.class
+com\revature\bankapp\daos\TransactionDao.class
 com\revature\bankapp\web\servlets\TestServlet.class
 com\revature\bankapp\model\Account.class
 com\revature\bankapp\web\servlets\AuthServlet.class
 com\revature\bankapp\daos\UserDao.class
 com\revature\bankapp\model\Users.class
-com\revature\bankapp\web\servlets\AccountServlet$BankDetails.class
 com\revature\bankapp\exceptions\InvalidRequestException.class
 com\revature\bankapp\exceptions\AuthenticationException.class

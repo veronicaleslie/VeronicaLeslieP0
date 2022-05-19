@@ -11,14 +11,18 @@ public class TransactionServices extends AccountServices {
     public TransactionServices(AccountDao accountDao) {
         super(accountDao);
     }
-    public void deposit(String deposit, String id) throws InvalidRequestException {
+    public Object deposit(String deposit, String id) throws InvalidRequestException {
 
-        if (depositCheck(deposit) == false) {
+        if (deposit(deposit) == false) {
             throw new InvalidRequestException("Invalid Amount: Amount must exceed 0");
         }
-        Account depositInAccount = AccountDao.deposit(deposit, id);
 
 
+        return null;
+    }
+
+    private boolean deposit(String deposit) {
+        return false;
     }
 
     public Account withdraw(String deposit, String id) throws InvalidRequestException {
@@ -34,15 +38,6 @@ public class TransactionServices extends AccountServices {
 
         return withdrawAmount;
 
-    }
-
-    public boolean depositCheck(String deposit) {
-
-        if (Integer.parseInt(deposit) < 0 || deposit.equals("")) return false;
-
-
-
-        return true;
     }
 
     public boolean withdrawAmount(String deposit) {

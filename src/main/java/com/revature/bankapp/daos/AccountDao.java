@@ -2,7 +2,6 @@ package com.revature.bankapp.daos;
 
 
 import com.revature.bankapp.model.Account;
-import com.revature.bankapp.model.Users;
 import com.revature.bankapp.util.ConnectionFactory;
 
 import java.io.IOException;
@@ -10,6 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import static com.revature.bankapp.util.ConnectionFactory.*;
 
 public class AccountDao {
     private int index;
@@ -45,7 +46,7 @@ public class AccountDao {
     public Account showBalance() throws IOException {
 
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection();) { // try with resoruces, because Connection extends the interface Auto-Closeable
+        try (Connection conn = getInstance().getConnection();) { // try with resoruces, because Connection extends the interface Auto-Closeable
 
             String sql = "select * from banking_accounts";
             Statement s = conn.createStatement();
