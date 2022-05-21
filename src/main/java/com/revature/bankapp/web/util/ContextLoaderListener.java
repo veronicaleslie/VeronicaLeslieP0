@@ -27,9 +27,10 @@ public class ContextLoaderListener implements ServletContextListener {
         UserDao userDao = new UserDao();
         AccountDao accountDao = new AccountDao();
 
+
         // Instantiate and intialize the services with their dao dependency
         UserServices userServices = new UserServices(userDao);
-        AccountServices accountServices = new AccountServices(accountDao);
+        AccountServices accountServices = new AccountServices();
 
 
         AuthServlet authServlet = new AuthServlet(userServices, mapper);
@@ -40,7 +41,6 @@ public class ContextLoaderListener implements ServletContextListener {
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
         context.addServlet("UserServlet", userServlet).addMapping("/users/*");
         context.addServlet("AccountServlet", accountServlet).addMapping("/account/*");
-
     }
 
     @Override

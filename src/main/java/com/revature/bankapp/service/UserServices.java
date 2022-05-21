@@ -5,7 +5,7 @@ import com.revature.bankapp.daos.UserDao;
 import com.revature.bankapp.exceptions.AuthenticationException;
 import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
-import com.revature.bankapp.util.logging.Logger;
+//import com.revature.bankapp.util.logging.Logger;
 import com.revature.bankapp.model.Users;
 
 import javax.servlet.annotation.WebServlet;
@@ -15,27 +15,32 @@ import java.io.IOException;
 public class UserServices implements com.revature.bankapp.service.Serviceable<Users> {
 
     private final UserDao userDao;
-    private final Logger logger = Logger.getLogger();
+    //private final Logger logger = Logger.getLogger();
 
     public UserServices(UserDao userDao) {
         this.userDao = userDao;
     }
 
-    @Override
-    public Users[] readAll(){
-        logger.info("Begin reading Users in our file database.");
+    //@Override
+   // public Users[] readAll(){
+       // logger.info("Begin reading Users in our file database.");
 
 
-        try {
-            Users[] users = userDao.findAll();
-            logger.info("All users have been found here are the results: \n");
+       // try {
+           // Users[] users = userDao.findAll();
+          //  logger.info("All users have been found here are the results: \n");
 //
-            return users;
+           // return users;
 
-        } catch (IOException | NullPointerException e) {
-            e.printStackTrace();
-            return null;
-        }
+       // } catch (IOException | NullPointerException e) {
+          //  e.printStackTrace();
+        //    return null;
+       // }
+   // }
+
+    @Override
+    public Users[] readAll() {
+        return new Users[0];
     }
 
     @Override
@@ -59,7 +64,7 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
     }
 
     public Users create(Users newUser) throws InvalidRequestException, ResourcePersistanceException {
-        logger.info("User trying to be registered: " + newUser);
+        //logger.info("User trying to be registered: " + newUser);
         if(!validateInput(newUser)){ // checking if false
             // TODO: throw - what's this keyword?
             throw new InvalidRequestException("User input was not validated, either empty String or null values");
@@ -75,12 +80,12 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
         if(persistedUser == null){
             throw new ResourcePersistanceException("User was not persisted to the database upon registration");
         }
-        logger.info("User has been persisted: " + newUser);
+       // logger.info("User has been persisted: " + newUser);
         return persistedUser;
     }
 
     public boolean validateInput(Users newUser) {
-        logger.debug("Validating User: " + newUser);
+       // logger.debug("Validating User: " + newUser);
         if(newUser == null) return false;
         if(newUser.getFirst_name() == null || newUser.getFirst_name().trim().equals("")) return false;
         if(newUser.getLast_name() == null || newUser.getLast_name().trim().equals("")) return false;
@@ -95,7 +100,7 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
             throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
         }
 
-        Users authenticatedUser = userDao.authenticateUser(email, password);
+        Users authenticatedUser = UserDao.authenticateUser(email, password);
 
         if (authenticatedUser == null){
             throw new AuthenticationException("Unauthenticated user, information provided was not consistent with our database.");

@@ -5,68 +5,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae75133b-4d08-41f1-9c5a-2d5857595ad1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/TransactionDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/TransactionServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VeronicaLeslieP0" beforeDir="false" afterPath="$PROJECT_DIR$/VeronicaLeslieP0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VeronicaLeslieP0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/VeronicaLeslieP0/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/AccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/AccountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/Crudable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/Crudable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/TransactionDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/exception/AuthenticationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/exception/InvalidRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/daos/exception/ResourcePersistanceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/model/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/AccountServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/AccountServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/TransactionServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/TransactionServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/service/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/util/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/util/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/util/logging/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/AccountDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/Crudable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/TransactionServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/servlets/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/util/ContextLoaderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/bankapp/web/util/ContextLoaderListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/AccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/AccountDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/Crudable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/Crudable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/TransactionDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/exception/AuthenticationException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/exception/InvalidRequestException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/daos/exception/ResourcePersistanceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/exceptions/AuthenticationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/exceptions/InvalidRequestException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/exceptions/ResourcePersistanceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/model/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/model/Users.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/AccountServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/Serviceable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/TransactionServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/UserServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/util/ConnectionFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/model/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/model/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/AccountServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/AccountServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/TransactionServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/TransactionServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/service/UserServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/util/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/util/ConnectionFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/util/logging/Logger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/dto/LoginCreds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/AccountServlet$BankDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/AccountServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/AuthServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/Authable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/TestServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/UserServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/util/ContextLoaderListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/db.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/lib/checker-qual-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.13.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.13.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.13.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/lib/postgresql-42.3.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/AccountDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/AccountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/AccountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/TransactionServlet$1BankDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/TransactionServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/servlets/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/util/ContextLoaderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bankingapp-1.0-SNAPSHOT/WEB-INF/classes/com/revature/bankapp/web/util/ContextLoaderListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/AccountDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/AccountDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/Crudable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/Crudable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/TransactionDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/exception/AuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/exception/InvalidRequestException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/daos/exception/ResourcePersistanceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/model/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/AccountServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/TransactionServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/util/ConnectionFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/dto/LoginCreds.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AccountServlet$BankDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AccountServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AuthServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/TestServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/util/ContextLoaderListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/model/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/model/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/AccountServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/AccountServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/TransactionServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/TransactionServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/service/UserServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/util/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/util/ConnectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/util/logging/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AccountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AccountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/TransactionServlet$1BankDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/TransactionServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/servlets/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/util/ContextLoaderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/bankapp/web/util/ContextLoaderListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/revature/bankapp/services/UserServiceTestSuite.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

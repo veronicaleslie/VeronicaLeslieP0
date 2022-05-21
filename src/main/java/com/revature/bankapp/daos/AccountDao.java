@@ -1,75 +1,143 @@
 package com.revature.bankapp.daos;
 
-
+import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Account;
 import com.revature.bankapp.util.ConnectionFactory;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.Arrays;
+import java.util.List;
 
-import static com.revature.bankapp.util.ConnectionFactory.*;
+public class AccountDao implements Crudable<Account> {
 
-public class AccountDao {
-    private int index;
 
-    public static boolean update(String id2, String newAccount) {
-        return false;
-    }
-
-    public static Account deposit(String value, String id) {
+    public static Account withdraw(String deposit, String id) {
         return null;
     }
 
-    public static Account withdraw(String value, String id) {
-        return null;
-    }
+    @Override
+    public Account create(Account newAccount) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-    public com.revature.bankapp.model.Account create(com.revature.bankapp.model.Account newAccount) {
+            String sql = "insert into account values (default,?,?,?);"; // incomplete sql statement
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            // 1-indexed, so first ? starts are 1
+            ps.setInt(1, newAccount.getAccountID());
+            ps.setString(2, newAccount.getEmail());
+            ps.setString(3, newAccount.getAccountName());
+
+            int checkInsert = ps.executeUpdate();
+            if (checkInsert == 0) {
+                throw new ResourcePersistanceException("Account not created issue found.");
+            }
+
+        } catch (SQLException | RuntimeException e) {
+            e.printStackTrace();
+            return null;
+        } catch (ResourcePersistanceException e) {
+            throw new RuntimeException(e);
+        }
         return newAccount;
     }
 
-    public com.revature.bankapp.model.Account[] findAll(String email) {
-        return new Account[0];
+
+    @Override
+    public List<Account> findAll() throws IOException {
+        return Arrays.asList(new Account[0]);
     }
 
-    public com.revature.bankapp.model.Account findById(String id) {
-        return null;
-    }
+    public Account[] findAll(String email) throws IOException {
 
-    public Account readAccount(String email) {
-        return null;
-    }
+        Account[] userAccounts = new Account[10];
+        int index = 0;
 
-    public Account showBalance() throws IOException {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection();) { // try with resources, because Connection extends the interface Auto-Closeable
 
+            String sql = "select * from user_account where email=?";
+            PreparedStatement ps = conn.prepareStatement(sql);
 
-        try (Connection conn = getInstance().getConnection();) { // try with resoruces, because Connection extends the interface Auto-Closeable
+            ps.setString(1, email); // Wrapper class example
+            ResultSet rs = ps.executeQuery(); // remember dql, bc selects are the keywords
 
-            String sql = "select * from banking_accounts";
-            Statement s = conn.createStatement();
-
-            // conn.createStatement().executeQuery("select * from trainer"); fine but generally not used
-            // TODO: Hey why are we using the sql variable string here?
-            ResultSet rs = s.executeQuery(sql);
 
             while (rs.next()) { // the last line of the file is null
                 Account account = new Account();
 
-                account.Username(rs.getString("username")); // this column lable MUST MATCH THE DB
+                account.setAccountID(rs.getInt("id serial")); // this column label MUST MATCH THE DB
+                account.setUsername(rs.getString("username"));
                 account.setAccountName(rs.getString("account_type"));
-                account.setBalance(Integer.parseInt(rs.getString("account_balance")));
+                account.setBalance(rs.getInt("account_balance"));
 
-                System.out.println("acquired account balance" + index);
-
+                userAccounts[index] = account;
+                index++;
             }
-        } catch (SQLException e) {
+        } catch (
+                SQLException e) {
             e.printStackTrace();
             return null;
         }
+        return userAccounts;
+    }
 
-        return null;
+    @Override
+    public Account findById(String id) {
+
+        Account account;
+        try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
+
+            String sql = "select * from banking_accounts where id serial=?";
+
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setInt(1, Integer.parseInt(id)); // Wrapper class example
+            ResultSet rs = ps.executeQuery(); // remember dql, bc selects are the keywords
+
+            if (rs.next()) {
+                throw new ResourcePersistanceException("User could not be found. Please try again.");
+            }
+
+            account = new Account();
+
+            account.setAccountID(rs.getInt("id serial")); // this column label MUST MATCH THE DB
+            account.setEmail(rs.getString("email"));
+            account.setAccountName(rs.getString("account_name"));
+            account.setBalance(rs.getInt("balance"));
+
+            return account;
+        } catch (ResourcePersistanceException ex) {
+            throw new RuntimeException(ex);
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+
+
+    }
+
+    @Override
+    public boolean update(Account updatedObj) {
+        return false;
+    }
+
+
+    @Override
+    public boolean delete(String id) {
+        return false;
+    }
+
+    @Override
+    public boolean checkEmail(String email) {
+        return false;
+    }
+
+    @Override
+    public void deposit(String value, String id) {
+
     }
 }

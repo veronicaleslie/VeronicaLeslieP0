@@ -1,4 +1,4 @@
-package com.revature.bankapp.util.logging;
+/* package com.revature.bankapp.util.logging;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -86,4 +86,4 @@ public class Logger {
         }
     }
 
-}
+}*/

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Users;
 import com.revature.bankapp.service.UserServices;
-import com.revature.bankapp.util.logging.Logger;
+//import com.revature.bankapp.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,19 +15,18 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet("/users")
 public class UserServlet extends HttpServlet {
 
     private final UserServices userServices;
     private final ObjectMapper mapper;
-    private final Logger logger = Logger.getLogger();
+   // private final Logger logger = Logger.getLogger();
 
     public UserServlet(UserServices userServices, ObjectMapper mapper) {
         this.userServices = userServices;
         this.mapper = mapper;
     }
 
-    //@Override
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         if(!Authable.checkAuth(req, resp)) return;

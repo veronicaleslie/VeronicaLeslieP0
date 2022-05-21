@@ -3,20 +3,20 @@ package com.revature.bankapp.daos;
 import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Users;
 import com.revature.bankapp.util.ConnectionFactory;
-import com.revature.bankapp.util.logging.Logger;
 
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.sql.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
-    private Logger logger = Logger.getLogger();
+    //private Logger logger = Logger.getLogger();
 
     @Override
     public Users create(Users newUser) {
         System.out.println("Here is the newUser as it enters our DAO layer: "+ newUser); // What happens here? Java knows to invoke the toString() method when printing the object to the terminal
 
-        try(Connection conn = ConnectionFactory.getInstance().getConnection();) {
+        try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
             // NEVER EVER EVER EVER EVER concatenate or directly use these strings inside of the sql statement
             // String sql = "insert into trainer value (" + newTrainer.getFname() + "," + newTrainer.getLname();
@@ -54,7 +54,7 @@ public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
 
     //@Override
     @Override
-    public Users[] findAll() throws IOException {
+    public List<Users> findAll() throws IOException {
 
         // making an array of Trainer classes, and seetting it to a max size of 10
         Users[] users = new Users[10];
@@ -62,7 +62,7 @@ public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
         int index = 0; // we want to keep track of where we are placing each trainer from the file into the the array
 
         // TODO: we trying something here and passing an argumetn???
-        try (Connection conn = ConnectionFactory.getInstance().getConnection();) { // try with resoruces, because Connection extends the interface Auto-Closeable
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) { // try with resoruces, because Connection extends the interface Auto-Closeable
 
             String sql = "select * from user_account";
             Statement s = conn.createStatement();
@@ -80,9 +80,9 @@ public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
 
-                System.out.println("Inserted trainer into index" + index);
+                System.out.println("Inserted user into index" + index);
                 users[index] = user;
-                index++; // increment the index by 1, must occur after the trainer[index] re-assignment
+                index++; // increment the index by 1, must occur after the user[index] re-assignment
                 System.out.println("Going to the next line for our following index.");
             }
         } catch (SQLException e) {
@@ -93,15 +93,15 @@ public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
 
 
         System.out.println("Returning users infomation to user.");
-        return users;
+        return Arrays.asList(users);
     }
 
     @Override
-    public Object findById(String id) {
+    public Users findById(String id) {
 
-        try(Connection conn = ConnectionFactory.getInstance().getConnection();){
+        try(Connection conn = ConnectionFactory.getInstance().getConnection()){
 
-            String sql = "select * from user_account where id = ?";
+            String sql = "select * from user_account where id serial = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -175,19 +175,21 @@ public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
     public boolean checkEmail(String email) {
 
         try(Connection conn = ConnectionFactory.getInstance().getConnection()){
-            String sql = "select email from User where email = ?";
+            String sql = "select email from user_account where email = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, email);
 
             ResultSet rs = ps.executeQuery();
 
-            if(!rs.isBeforeFirst()){
-                return false;
-            }
-            return true;
+            return rs.isBeforeFirst();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public void deposit(String value, String id) {
+
     }
 }

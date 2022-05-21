@@ -8,11 +8,11 @@ import java.util.Properties;
 
 public class ConnectionFactory {
 
-    private static final ConnectionFactory connectionFactory = new ConnectionFactory(); // instead Eager Singleton
+   private static final ConnectionFactory connectionFactory = new ConnectionFactory(); // instead Eager Singleton
     private Properties prop = new Properties();
 
     // specifically a singleton bc of the private constructor
-    private ConnectionFactory() {
+   private ConnectionFactory() {
         try {
             ClassLoader loader = Thread.currentThread().getContextClassLoader();
             prop.load(loader.getResourceAsStream("db.properties"));
@@ -24,7 +24,7 @@ public class ConnectionFactory {
     static {
         // Reflections are just viewing a class
         try {
-            Class.forName("org.postgresql.Driver");
+           Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -40,16 +40,16 @@ public class ConnectionFactory {
 
         Connection conn = null;
 
-        // String url = "jdbc:postgresql://localhost:5432/postgres"; // default url will connect you to public
+         String url = "jdbc:postgresql://localhost:5432/postgres"; // default url will connect you to public
         // TODO: WE NEED TO FIX THIS
         // make sure currentSchema name lowercase
         // String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=pokedex"; // default url will connect you to public
-        // String user = "postgres";
-        // String password = "password";
+         String user = "postgres";
+         String password = "swimgood4";
 
         try {
             conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("user"), prop.getProperty("password"));
-        } catch (SQLException e) {
+       } catch (SQLException e) {
             e.printStackTrace();
         }
         return conn;

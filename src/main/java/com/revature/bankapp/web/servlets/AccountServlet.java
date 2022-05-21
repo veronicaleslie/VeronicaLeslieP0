@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet("/accounts")
 public class AccountServlet extends HttpServlet {
     private final AccountServices accountServices;
     private final ObjectMapper mapper;
@@ -31,7 +30,7 @@ public class AccountServlet extends HttpServlet {
 
         if (req.getParameter("id") != null) {
             Account account;
-            account = accountServices.readAccountById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+            account = accountServices.readAccountById(req.getParameter("email")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
 
             String payload = mapper.writeValueAsString(account);
             resp.getWriter().write(payload);
@@ -39,8 +38,8 @@ public class AccountServlet extends HttpServlet {
             return;
         }
 
-        //    List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("email")));
-        List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
+         List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("email")));
+        //List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
         String payload = mapper.writeValueAsString(accounts);
 
         resp.getWriter().write(payload);
@@ -49,21 +48,24 @@ public class AccountServlet extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (checkAuth(req, resp)) System.out.println("user not authorized");
         String payload = "";
-        if (req.getParameter("id") != null || req.getParameter("value") != null) {
+        if (req.getParameter("email") != null || req.getParameter("value") != null) {
             Account account;
             try {
-                accountServices.deposit(req.getParameter("value"), req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
-                account = accountServices.readAccountById(req.getParameter("id"));
+                accountServices.deposit(req.getParameter("value"), req.getParameter("email")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                account = accountServices.readAccountById(req.getParameter("email"));
 
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             } catch (InvalidRequestException e) {
                 throw new RuntimeException(e);
             }
+
 
             payload = mapper.writeValueAsString(account);
             resp.getWriter().write(payload);
             resp.setStatus(201);
         }
-        resp.getWriter().write("Invalid value or id");
+        resp.getWriter().write("Invalid value or email");
 
 
     }

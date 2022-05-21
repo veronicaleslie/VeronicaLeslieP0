@@ -4,21 +4,16 @@ import com.revature.bankapp.daos.AccountDao;
 import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.model.Account;
 
-import javax.servlet.annotation.WebServlet;
-
-@WebServlet("/transaction")
 public class TransactionServices extends AccountServices {
     public TransactionServices(AccountDao accountDao) {
-        super(accountDao);
+        super();
     }
-    public Object deposit(String deposit, String id) throws InvalidRequestException {
+    public void deposit(String deposit, String id) throws InvalidRequestException {
 
         if (deposit(deposit) == false) {
             throw new InvalidRequestException("Invalid Amount: Amount must exceed 0");
         }
 
-
-        return null;
     }
 
     private boolean deposit(String deposit) {

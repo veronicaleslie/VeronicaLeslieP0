@@ -44,7 +44,7 @@ public class AuthServlet extends HttpServlet {
             resp.setStatus(404);
             resp.getWriter().write(e.getMessage());
         } catch (Exception e){
-            resp.setStatus(409);
+            resp.setStatus(500);
             resp.getWriter().write(e.getMessage());
         }
     }

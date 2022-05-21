@@ -55,14 +55,16 @@ public class Account {
     }
     @Override // What this is?? Annotation - basically metadata
     public String toString() {
-        return "User{" +
-                "email='" + email + '\'' +
-                ", accountname='" + accountName + '\'' +
-                ", accountID='" + accountID + '\'' +
-                ", balance='" + balance + '\'' +
-                '}';
+        return
+                "Email: " + email + '\'' +
+                        "| Accountname: " + accountName + '\'' +
+                        "| AccountID='" + accountID + '\'' +
+                        "| Balance='" + balance + '\'';
     }
 
-    public void Username(String first_name) {
+    public void warn(String id_was_not_found) {
+    }
+
+    public void setUsername(String username) {
     }
 }
