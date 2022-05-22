@@ -19,7 +19,7 @@ public class UserServlet extends HttpServlet {
 
     private final UserServices userServices;
     private final ObjectMapper mapper;
-   // private final Logger logger = Logger.getLogger();
+    // private final Logger logger = Logger.getLogger();
 
     public UserServlet(UserServices userServices, ObjectMapper mapper) {
         this.userServices = userServices;
@@ -29,7 +29,7 @@ public class UserServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if(!Authable.checkAuth(req, resp)) return;
+        if (!Authable.checkAuth(req, resp)) return;
         // The below code allows to split information from the endpoint after the /trainers/. Reminder the first element is empty because it takes the value from before the first /
 //        String pathInfo = req.getPathInfo();
 //        String[] pathParts = pathInfo.split("/");
@@ -37,13 +37,13 @@ public class UserServlet extends HttpServlet {
 
 
         // Handling the query params in the
-        if(req.getParameter("id") != null && req.getParameter("email") != null){
-            resp.getWriter().write("You entered the following id and email " + req.getParameter("id") + " " + req.getParameter("email") );
+        if (req.getParameter("id") != null && req.getParameter("email") != null) {
+            resp.getWriter().write("You entered the following id and email " + req.getParameter("id") + " " + req.getParameter("email"));
             return;
         }
 
         // Handling the query params in the endpoint /trainers?id=x
-        if(req.getParameter("id") != null){
+        if (req.getParameter("id") != null) {
             Users user;
             try {
                 user = userServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
@@ -64,8 +64,13 @@ public class UserServlet extends HttpServlet {
         resp.getWriter().write(payload);
     }
 
-    //@Override
-   // public void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    @Override
+    public void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+}
 

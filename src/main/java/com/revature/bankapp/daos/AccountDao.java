@@ -69,7 +69,7 @@ public class AccountDao implements Crudable<Account> {
             while (rs.next()) { // the last line of the file is null
                 Account account = new Account();
 
-                account.setAccountID(rs.getInt("id serial")); // this column label MUST MATCH THE DB
+                account.setAccountID(rs.getInt("id")); // this column label MUST MATCH THE DB
                 account.setUsername(rs.getString("username"));
                 account.setAccountName(rs.getString("account_type"));
                 account.setBalance(rs.getInt("account_balance"));
@@ -91,7 +91,7 @@ public class AccountDao implements Crudable<Account> {
         Account account;
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-            String sql = "select * from banking_accounts where id serial=?";
+            String sql = "select * from banking_accounts where id =?";
 
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -105,7 +105,7 @@ public class AccountDao implements Crudable<Account> {
 
             account = new Account();
 
-            account.setAccountID(rs.getInt("id serial")); // this column label MUST MATCH THE DB
+            account.setAccountID(rs.getInt("id")); // this column label MUST MATCH THE DB
             account.setEmail(rs.getString("email"));
             account.setAccountName(rs.getString("account_name"));
             account.setBalance(rs.getInt("balance"));

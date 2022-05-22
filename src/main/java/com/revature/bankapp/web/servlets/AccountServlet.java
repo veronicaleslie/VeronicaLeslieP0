@@ -29,8 +29,7 @@ public class AccountServlet extends HttpServlet {
         if (checkAuth(req, resp)) return;
 
         if (req.getParameter("id") != null) {
-            Account account;
-            account = accountServices.readAccountById(req.getParameter("email")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+            Account account = accountServices.readAccountById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
 
             String payload = mapper.writeValueAsString(account);
             resp.getWriter().write(payload);
@@ -38,37 +37,27 @@ public class AccountServlet extends HttpServlet {
             return;
         }
 
-         List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("email")));
+         List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
         //List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
         String payload = mapper.writeValueAsString(accounts);
 
         resp.getWriter().write(payload);
     }
 
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (checkAuth(req, resp)) System.out.println("user not authorized");
-        String payload = "";
-        if (req.getParameter("email") != null || req.getParameter("value") != null) {
-            Account account;
-            try {
-                accountServices.deposit(req.getParameter("value"), req.getParameter("email")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
-                account = accountServices.readAccountById(req.getParameter("email"));
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (!checkAuth(req, resp)) return;
 
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            } catch (InvalidRequestException e) {
-                throw new RuntimeException(e);
-            }
+        Account newAccount = mapper.readValue(req.getInputStream(), Account.class);
+        Account persistedAccount = accountServices.create(newAccount);
+        String payload = mapper.writeValueAsString(persistedAccount);
 
-
-            payload = mapper.writeValueAsString(account);
+        resp.getWriter().write("Account persisted");
             resp.getWriter().write(payload);
             resp.setStatus(201);
         }
-        resp.getWriter().write("Invalid value or email");
 
 
-    }
 
     protected boolean checkAuth(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession httpSession = req.getSession();
@@ -78,6 +67,16 @@ public class AccountServlet extends HttpServlet {
             return true;
         }
         return false;
+
+    }
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+    }
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 
     }
 

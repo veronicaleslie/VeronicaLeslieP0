@@ -11,7 +11,6 @@ com\revature\bankapp\daos\AccountDao.class
 com\revature\bankapp\exceptions\InvalidRequestException.class
 com\revature\bankapp\daos\Crudable.class
 com\revature\bankapp\service\Serviceable.class
-com\revature\bankapp\service\TransactionServices.class
 com\revature\bankapp\web\servlets\AccountServlet.class
 com\revature\bankapp\web\servlets\UserServlet.class
 com\revature\bankapp\web\servlets\Authable.class

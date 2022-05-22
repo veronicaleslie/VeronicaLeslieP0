@@ -67,5 +67,9 @@ public class AccountServices {
     private Account newAccount() {
         return null;
     }
+
+    public Account create(Account newAccount) {
+        return newAccount;
+    }
 }
 

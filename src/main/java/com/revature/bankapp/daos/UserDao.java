@@ -23,7 +23,7 @@ public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
 
             // The commented out sql String is using default for auto-generating the ID ifyou used serial
             // String sql = "insert into trainer values (default, ?, ?, ?, ?, ?)"; // incomplete sql statement, with default if not specifiying columns
-            String sql = "insert into User (first_name,last_, email, password, username (?, ?, ?, ?, ?)";
+            String sql = "insert into user_account (first_name,last_, email, password, username (?, ?, ?, ?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -101,7 +101,7 @@ public class UserDao implements com.revature.bankapp.daos.Crudable<Users> {
 
         try(Connection conn = ConnectionFactory.getInstance().getConnection()){
 
-            String sql = "select * from user_account where id serial = ?";
+            String sql = "select * from user_account where id = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
