@@ -1,5 +1,4 @@
 package com.revature.bankapp.service;
-
 import com.revature.bankapp.daos.AccountDao;
 import com.revature.bankapp.exceptions.InvalidRequestException;
 import com.revature.bankapp.model.Account;
@@ -8,10 +7,12 @@ import java.io.IOException;
 
 public class AccountServices {
     private final AccountDao accountDao = new AccountDao();
+public  AccountServices(){
 
+}
 
-    public Account[] readAccount(String email) throws IOException {
-        Account account[]; account = new Account[0];
+    public Account[] readAccount(String email) {
+        Account[] account = new Account[0];
         try {
             account = accountDao.findAll(email);
             for (int i = 0; i < account.length; i++) {
@@ -51,7 +52,7 @@ public class AccountServices {
         return newAccount.getUsername() != null || !newAccount.getUsername().trim().equals("");
     }
     public Account readAccountById(String id) {
-        Account account = newAccount();
+        Account account = new Account();
         try {
             account = accountDao.findById(id);
         } catch (Exception e) {
@@ -60,9 +61,7 @@ public class AccountServices {
         return account;
     }
 
-    private Account newAccount() {
-        return null;
-    }
+
 
 
 }

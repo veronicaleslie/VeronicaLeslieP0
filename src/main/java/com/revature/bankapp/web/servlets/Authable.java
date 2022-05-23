@@ -19,7 +19,4 @@ public interface Authable {
         return true;
     }
 
-    void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
-
-    void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
 }

@@ -94,20 +94,22 @@ public class AccountDao implements Crudable<Account> {
 
             ps.setInt(1, Integer.parseInt(id)); // Wrapper class example
             ResultSet rs = ps.executeQuery(); // remember dql, bc selects are the keywords
+            System.out.println(ps);
 
             if (rs.next()) {
-                throw new ResourcePersistanceException("User could not be found. Please try again.");
-            }
+             Account accounts = new Account();
 
-            account = new Account();
 
-            account.setAccountID(rs.getInt("id")); // this column label MUST MATCH THE DB
-            account.setUsername(rs.getString("username"));
-            account.setAccountName(rs.getString("account_type"));
-            account.setBalance(rs.getInt("account_balance"));
+            accounts.setAccountID(rs.getInt("id")); // this column label MUST MATCH THE DB
+            accounts.setUsername(rs.getString("username"));
+            accounts.setAccountName(rs.getString("account_type"));
+            accounts.setBalance(rs.getInt("account_balance"));
 
-            return account;
-        } catch (ResourcePersistanceException ex) {
+            return accounts;
+        }else throw new ResourcePersistanceException("User could not be found. Please try again.");
+        }
+
+            catch (ResourcePersistanceException ex) {
             throw new RuntimeException(ex);
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
@@ -134,7 +136,7 @@ public class AccountDao implements Crudable<Account> {
 
     @Override
         public void deposit (String amount, String id){
-            try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
+            try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
                 String sql = "update banking_accounts set account_balance = account_balance + ? where username  = '?'";
 

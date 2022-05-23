@@ -46,7 +46,7 @@ public class UserServlet extends HttpServlet {
         if (req.getParameter("id") != null) {
             Users user;
             try {
-                user = userServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                user = userServices.readById(req.getParameter("id"));
             } catch (Exception | ResourcePersistanceException e) {
                 throw new RuntimeException(e);
                 //resp.setStatus(404);

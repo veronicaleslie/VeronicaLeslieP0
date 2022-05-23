@@ -40,7 +40,7 @@ public class ConnectionFactory {
 
         Connection conn = null;
 
-         String url = "jdbc:postgresql://localhost:5432/postgres"; // default url will connect you to public
+         String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=banking_app"; // default url will connect you to public
         // TODO: WE NEED TO FIX THIS
         // make sure currentSchema name lowercase
         // String url = "jdbc:postgresql://localhost:5432/postgres?currentSchema=pokedex"; // default url will connect you to public
