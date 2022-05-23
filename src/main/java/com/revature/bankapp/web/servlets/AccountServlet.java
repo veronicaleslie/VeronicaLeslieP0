@@ -64,11 +64,11 @@ public class AccountServlet extends HttpServlet {
         if (!checkAuth(req, resp)) return;
 
         String payload = "";
-        if (req.getParameter("username") != null || req.getParameter("account_type") != null) {
+        if (req.getParameter("id") != null || req.getParameter("value") != null) {
             Account account;
             try {
-                accountServices.deposit(req.getParameter("account_type"), req.getParameter("username")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
-                account = accountServices.readAccountById(req.getParameter("username"));
+                accountServices.deposit(req.getParameter("value"), req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                account = accountServices.readAccountById(req.getParameter("id"));
 
             } catch (InvalidRequestException e) {
                 resp.setStatus(404);

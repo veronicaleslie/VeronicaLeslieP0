@@ -136,7 +136,7 @@ public class AccountDao implements Crudable<Account> {
         public void deposit (String amount, String id){
             try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
 
-                String sql = "update account set account_balance=balance+? where id=?";
+                String sql = "update banking_accounts set account_balance = account_balance + ? where username  = '?'";
 
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setInt(1, Integer.parseInt(amount));
