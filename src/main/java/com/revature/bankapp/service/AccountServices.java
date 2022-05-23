@@ -9,8 +9,6 @@ import java.io.IOException;
 public class AccountServices {
     private final AccountDao accountDao = new AccountDao();
 
-    public AccountServices() {
-    }
 
     public Account[] readAccount(String email) throws IOException {
         Account account[]; account = new Account[0];
@@ -31,7 +29,7 @@ public class AccountServices {
     }
 
     public boolean registerAccount(Account newAccount){
-        if(!validateAccountInput(newAccount)){ // checking if false
+        if(!validateAccountInput(newAccount)){
             throw new RuntimeException();
         }
 
@@ -50,7 +48,7 @@ public class AccountServices {
         if(newAccount == null) return false;
         if(newAccount.getAccountID() == 0) return false;
         if(newAccount.getAccountName() == null || newAccount.getAccountName().trim().equals("")) return false;
-        return newAccount.getEmail() != null || !newAccount.getEmail().trim().equals("");
+        return newAccount.getUsername() != null || !newAccount.getUsername().trim().equals("");
     }
     public Account readAccountById(String id) {
         Account account = newAccount();
@@ -58,8 +56,6 @@ public class AccountServices {
             account = accountDao.findById(id);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        } {
-            account.warn("ID WAS NOT FOUND");
         }
         return account;
     }
@@ -68,8 +64,6 @@ public class AccountServices {
         return null;
     }
 
-    public Account create(Account newAccount) {
-        return newAccount;
-    }
+
 }
 

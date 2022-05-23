@@ -15,21 +15,17 @@ import java.util.List;
 public class AccountDao implements Crudable<Account> {
 
 
-    public static Account withdraw(String deposit, String id) {
-        return null;
-    }
-
     @Override
     public Account create(Account newAccount) {
-        try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
-            String sql = "insert into account values (default,?,?,?);"; // incomplete sql statement
+            String sql = "insert into banking_accounts values (default,?,?,?);"; // incomplete sql statement
 
             PreparedStatement ps = conn.prepareStatement(sql);
 
             // 1-indexed, so first ? starts are 1
             ps.setInt(1, newAccount.getAccountID());
-            ps.setString(2, newAccount.getEmail());
+            ps.setString(2, newAccount.getUsername());
             ps.setString(3, newAccount.getAccountName());
 
             int checkInsert = ps.executeUpdate();
@@ -59,11 +55,11 @@ public class AccountDao implements Crudable<Account> {
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection();) { // try with resources, because Connection extends the interface Auto-Closeable
 
-            String sql = "select * from user_account where email=?";
+            String sql = "select * from banking_accounts where username=?";
             PreparedStatement ps = conn.prepareStatement(sql);
 
-            ps.setString(1, email); // Wrapper class example
-            ResultSet rs = ps.executeQuery(); // remember dql, bc selects are the keywords
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
 
 
             while (rs.next()) { // the last line of the file is null
@@ -106,9 +102,9 @@ public class AccountDao implements Crudable<Account> {
             account = new Account();
 
             account.setAccountID(rs.getInt("id")); // this column label MUST MATCH THE DB
-            account.setEmail(rs.getString("email"));
-            account.setAccountName(rs.getString("account_name"));
-            account.setBalance(rs.getInt("balance"));
+            account.setUsername(rs.getString("username"));
+            account.setAccountName(rs.getString("account_type"));
+            account.setBalance(rs.getInt("account_balance"));
 
             return account;
         } catch (ResourcePersistanceException ex) {
@@ -123,9 +119,8 @@ public class AccountDao implements Crudable<Account> {
     @Override
     public boolean update(Account updatedObj) {
         return false;
-    }
 
-
+        }
     @Override
     public boolean delete(String id) {
         return false;
@@ -136,8 +131,25 @@ public class AccountDao implements Crudable<Account> {
         return false;
     }
 
-    @Override
-    public void deposit(String value, String id) {
 
-    }
+    @Override
+        public void deposit (String amount, String id){
+            try (Connection conn = ConnectionFactory.getInstance().getConnection();) {
+
+                String sql = "update account set account_balance=balance+? where id=?";
+
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setInt(1, Integer.parseInt(amount));
+                ps.setInt(1, Integer.parseInt(id));
+                int rs = ps.executeUpdate();
+                System.out.println("transaction complete" + amount + "has been inserted into your account");
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+
+
+
 }

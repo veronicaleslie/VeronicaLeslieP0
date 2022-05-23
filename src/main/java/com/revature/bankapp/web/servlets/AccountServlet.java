@@ -2,6 +2,7 @@ package com.revature.bankapp.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.bankapp.exceptions.InvalidRequestException;
+import com.revature.bankapp.exceptions.ResourcePersistanceException;
 import com.revature.bankapp.model.Account;
 import com.revature.bankapp.service.AccountServices;
 
@@ -28,8 +29,9 @@ public class AccountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (checkAuth(req, resp)) return;
 
-        if (req.getParameter("id") != null) {
-            Account account = accountServices.readAccountById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+        if (req.getParameter("username") != null) {
+            List<Account> account = Arrays.asList(accountServices.readAccount(req.getParameter("username")));
+
 
             String payload = mapper.writeValueAsString(account);
             resp.getWriter().write(payload);
@@ -37,25 +39,12 @@ public class AccountServlet extends HttpServlet {
             return;
         }
 
-         List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
-        //List<Account> accounts = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
-        String payload = mapper.writeValueAsString(accounts);
+
+        List<Account> account = Arrays.asList(accountServices.readAccount(req.getParameter("id")));
+        String payload = mapper.writeValueAsString(account);
 
         resp.getWriter().write(payload);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (!checkAuth(req, resp)) return;
-
-        Account newAccount = mapper.readValue(req.getInputStream(), Account.class);
-        Account persistedAccount = accountServices.create(newAccount);
-        String payload = mapper.writeValueAsString(persistedAccount);
-
-        resp.getWriter().write("Account persisted");
-            resp.getWriter().write(payload);
-            resp.setStatus(201);
-        }
 
 
 
@@ -69,16 +58,27 @@ public class AccountServlet extends HttpServlet {
         return false;
 
     }
+
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (!checkAuth(req, resp)) return;
 
+        String payload = "";
+        if (req.getParameter("username") != null || req.getParameter("account_type") != null) {
+            Account account;
+            try {
+                accountServices.deposit(req.getParameter("account_type"), req.getParameter("username")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                account = accountServices.readAccountById(req.getParameter("username"));
 
+            } catch (InvalidRequestException e) {
+                resp.setStatus(404);
+                return;
+            }
+            payload = mapper.writeValueAsString(account);
+            resp.getWriter().write(payload);
+            resp.setStatus(201);
+            return;
+        }
+        resp.getWriter().write("Invalid value or username");
     }
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-    }
-
-
 }

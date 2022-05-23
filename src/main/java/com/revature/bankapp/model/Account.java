@@ -1,26 +1,24 @@
 package com.revature.bankapp.model;
 
 public class Account {
-    private String email;
+    private String username;
     private String accountName;
     private int accountID;
     private int balance;
 
 
-    public Account(String email, String accountName, int accountID) {
+    public Account(String username, String accountName, int accountID) {
         super();
-        this.email = email;
+        this.username= username;
         this.accountName = accountName;
         this.balance = 0;
         this.accountID = accountID;
     }
-    public Account(){
+
+    public Account() {
 
     }
 
-    public static int getCurrentAccountAmount() {
-        return 0;
-    }
 
     public void setAccountName(String accountName) {
         this.accountName = accountName;
@@ -42,29 +40,27 @@ public class Account {
         this.accountID = accountID;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getUsername() {
+        return username;
     }
 
-    public String getEmail() {
-        return email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getAccountID() {
         return accountID;
     }
+
     @Override // What this is?? Annotation - basically metadata
     public String toString() {
         return
-                "Email: " + email + '\'' +
+                "Username: " + username + '\'' +
                         "| Accountname: " + accountName + '\'' +
                         "| AccountID='" + accountID + '\'' +
                         "| Balance='" + balance + '\'';
     }
 
-    public void warn(String id_was_not_found) {
-    }
 
-    public void setUsername(String username) {
-    }
+
 }

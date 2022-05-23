@@ -47,7 +47,7 @@ public class UserServlet extends HttpServlet {
             Users user;
             try {
                 user = userServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
-            } catch (Exception e) {
+            } catch (Exception | ResourcePersistanceException e) {
                 throw new RuntimeException(e);
                 //resp.setStatus(404);
             }
@@ -58,19 +58,26 @@ public class UserServlet extends HttpServlet {
             return;
         }
 
-        List<Users> users = Arrays.asList(userServices.readAll());
+        List<Users> users = userServices.readAll();
         String payload = mapper.writeValueAsString(users);
 
         resp.getWriter().write(payload);
     }
 
-    @Override
-    public void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    }
-    @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        Users newUser = mapper.readValue(req.getInputStream(), Users.class); // from JSON to Java Object (user)
+        Users persistedUser = userServices.registerUser(newUser);
+
+        String payload = mapper.writeValueAsString(persistedUser); // Mapping from Java Object (user) to JSON
+
+        resp.getWriter().write(payload);
+        resp.setStatus(201);
     }
-}
+    }
+
+
 

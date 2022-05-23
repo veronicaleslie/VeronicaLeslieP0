@@ -10,11 +10,12 @@ import com.revature.bankapp.model.Users;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
+import java.util.List;
 
 
-public class UserServices implements com.revature.bankapp.service.Serviceable<Users> {
+public class UserServices implements Serviceable<Users> {
 
-    private final UserDao userDao;
+    private UserDao userDao;
     //private final Logger logger = Logger.getLogger();
 
     public UserServices(UserDao userDao) {
@@ -38,14 +39,15 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
        // }
    // }
 
-    @Override
-    public Users[] readAll() {
-        return new Users[0];
-    }
+    //@Override
+   // public Users[] readAll() {
+        //return new Users[0];
+    //}
 
     @Override
-    public Users readById(String id){
-        return (Users) userDao.findById(id);
+    public Users readById(String id) throws ResourcePersistanceException{
+        Users user = userDao.findById(id);
+        return user;
     }
 
     @Override
@@ -84,6 +86,11 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
         return persistedUser;
     }
 
+    @Override
+    public List<Users> readAll() {
+        return null;
+    }
+
     public boolean validateInput(Users newUser) {
        // logger.debug("Validating User: " + newUser);
         if(newUser == null) return false;
@@ -108,5 +115,9 @@ public class UserServices implements com.revature.bankapp.service.Serviceable<Us
 
         return authenticatedUser;
 
+    }
+
+    public Users registerUser(Users newUser) {
+        return newUser;
     }
 }
